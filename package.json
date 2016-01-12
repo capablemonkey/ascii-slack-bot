@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "botkit": "0.0.5",
+    "figlet": "^1.1.1"
+  }
+}
