@@ -1,15 +1,6 @@
 # ascii-bot: an ascii art regurgitating Slack bot
 
-Say `ascii me hello world` and get:
-
-```
-  _          _ _                            _     _ 
- | |__   ___| | | ___   __      _____  _ __| | __| |
- | '_ \ / _ \ | |/ _ \  \ \ /\ / / _ \| '__| |/ _` |
- | | | |  __/ | | (_) |  \ V  V / (_) | |  | | (_| |
- |_| |_|\___|_|_|\___/    \_/\_/ \___/|_|  |_|\__,_|
-
-```
+![screenshot](https://cloud.githubusercontent.com/assets/1661310/12256022/0f3399ca-b8c8-11e5-9068-b4d19d9bfd0c.png)
 
 Pretty neat, eh? 
 
