@@ -1,5 +1,6 @@
 var Botkit = require('botkit');
 var figlet = require('figlet');
+var droplet = require('./droplet.json');
 
 var controller = Botkit.slackbot({
   debug: false
@@ -20,3 +21,27 @@ controller.hears(['^ascii me (.*)'],['ambient'],function(bot,message) {
   });
 });
 
+controller.hears(['^ascii animate droplet'], ['ambient'], function(bot, message) {
+  bot.api.chat.postMessage({
+    channel: message.channel,
+    as_user: true,
+    text: 'get ready'
+  }, function(err, res) {
+    message_id = res.ts
+
+    function update(frame) {
+      bot.api.chat.update({
+        channel: message.channel,
+        ts: message_id,
+        text: '```' + frame + '```'},
+        function(err, res) {console.log(err); console.log(res)});
+    }
+
+    var idx = 0;
+    var intervalId = setInterval(function(){
+      update(droplet.content[idx].text);
+      idx++;
+      idx = idx % droplet.content.length;
+    }, 250);
+  });
+});
